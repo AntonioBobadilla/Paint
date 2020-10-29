@@ -1,5 +1,6 @@
 from turtle import *
 from freegames import vector
+import math
 
 def line(start, end):
     "Draw line from start to end."
@@ -23,6 +24,9 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
+    up()
+    goto((start.x+end.x)/2,start.y)
+    down()
     pass  # TODO
 
 def rectangle(start, end):
@@ -31,7 +35,14 @@ def rectangle(start, end):
 
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x,end.y)
+    down()
+    forward(end.y - start.y)
+    left(90)
+    forward(end.x - start.x)
+    left(180-(math.degrees((math.atan((end.y - start.y)/(end.x - start.x))))))
+    forward(math.sqrt(((end.y - start.y)**2)+((end.x - start.x)**2)))
 
 def tap(x, y):
     "Store starting point or draw shape."
