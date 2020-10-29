@@ -41,16 +41,17 @@ def circle(start, end):
     "Draw circle from start to end."
     pass  # TODO
 
-	"""Usa circle, parese buena idea <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"""
+"""Usa circle, parese buena idea <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"""
 
 def rectangle(start, end):
+
     "Draw rectangle from start to end."
     pass  # TODO
 
 def triangle(start, end):
     "Draw triangle from start to end."
     pass  # TODO
-	"""equilatero?"""
+"""equilatero?"""
 #------------------------------------------------------------------------------------
 
 def tap(x, y):
@@ -74,9 +75,12 @@ setup(420, 420, 370, 0) #Size of windows
 #	largo, alto, corrdenada x, y 
 
 
-onscreenclick(tap) """i think that return interruptions of GI"""
-listen() """----------------------------------------------------------------------???"""
-onkey(undo, 'u') """  i think that only keep the states values"""
+onscreenclick(tap) 
+"""i think that return interruptions of GI"""
+listen() 
+"""----------------------------------------------------------------------???"""
+onkey(undo, 'u') 
+"""  i think that only keep the states values"""
 
 #Change color del trazo
 onkey(lambda: color('black'), 'K')
