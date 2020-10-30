@@ -15,6 +15,7 @@ from random import randint
 from freegames import square, vector
 
 #inicializa las coordenadas
+
 food = vector(0, 0)
 snake = [vector(10, 0)]
 #inicializa el movimiento de la serpiente
@@ -31,6 +32,7 @@ def inside(head):
     return -200 < head.x < 190 and -200 < head.y < 190
 """i know what do not how do it"""
 def move():
+
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
@@ -43,6 +45,7 @@ def move():
     snake.append(head)
 
     if head == food:
+
         print('Snake:', len(snake))
         #create new food
         food.x = randrange(-15, 15) * 10 # -150 <= x <= 150
@@ -60,7 +63,7 @@ def move():
         square(body.x, body.y, 9, colors[rColor])
 
     #Print the first food
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, colors[randint(0,11)]) # this rand generate a color with the food
     update()
     #Set the game with inputs at 1/10 seconds
     ontimer(move, 100)
