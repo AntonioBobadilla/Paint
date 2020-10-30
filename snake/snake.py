@@ -18,8 +18,8 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 #inicializa el movimiento de la serpiente
-aim = vector(0, -10)
-
+#aim = vector(0, -10)
+aim = vector (0,-10)
 def change(x, y):
     "Change snake direction."
     aim.x = x
@@ -29,6 +29,7 @@ def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 """i know what do not how do it"""
+
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
@@ -44,8 +45,8 @@ def move():
     if head == food:
         print('Snake:', len(snake))
         #create new food
-        food.x = randrange(-15, 15) * 10 # -150 <= x <= 150
-        food.y = randrange(-15, 15) * 10 # -150 <= y <= 150
+        food.x = randrange(-15, 15) * 10 # -420 <= x <= 420
+        food.y = randrange(-15, 15) * 10 # -420 <= y <= 420
     else:
         snake.pop(0)
 
