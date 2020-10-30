@@ -13,8 +13,10 @@ from turtle import *
 from random import randrange
 from freegames import square, vector
 
+#inicializa las coordenadas
 food = vector(0, 0)
 snake = [vector(10, 0)]
+#inicializa el movimiento de la serpiente
 aim = vector(0, -10)
 
 def change(x, y):
