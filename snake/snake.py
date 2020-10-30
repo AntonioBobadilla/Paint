@@ -52,7 +52,7 @@ def move():
         snake.pop(0)
 
     clear()
-# -------solo eliminar el #-------- todo lo de abajo esta comentado------------
+
     #print each part of the snake
     for body in snake:
         colors = ['black', 'blue', 'purple', 'yellow', 'brown', 'lightgreen',
