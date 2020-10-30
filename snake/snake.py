@@ -56,13 +56,27 @@ def move():
     update()
     ontimer(move, 100)
 
-setup(420, 420, 370, 0)
+setup(420, 420, 370, 0) #window size and coordinates
 hideturtle()
-tracer(False)
-listen()
+tracer(False) #quit delay in the game drawing
+listen() #return keyboard interruptions
+#change directions
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
+#Add AWSD
+#Rigth
+onkey(lambda: change(10, 0), 'd')
+onkey(lambda: change(10, 0), 'D')
+#Left
+onkey(lambda: change(-10, 0), 'a')
+onkey(lambda: change(-10, 0), 'A')
+#Up
+onkey(lambda: change(0, 10), 'w')
+onkey(lambda: change(0, 10), 'W')
+#Down
+onkey(lambda: change(0, -10), 's')
+onkey(lambda: change(0, -10), 'S')
 move()
 done()
