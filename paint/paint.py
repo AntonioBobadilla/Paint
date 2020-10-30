@@ -59,9 +59,17 @@ def rectangle(start, end):
     end_fill()
 
 def triangle(start, end):
-    "Draw triangle from start to end."
-    pass  # TODO
-"""equilatero?"""
+    
+    up()
+    goto(start.x,end.y)
+    begin_fill()
+    down()
+    forward(end.y - start.y)
+    left(90)
+    forward(end.x - start.x)
+    left(180-(math.degrees((math.atan((end.y - start.y)/(end.x - start.x))))))
+    forward(math.sqrt(((end.y - start.y)**2)+((end.x - start.x)**2)))
+    end_fill()
 #------------------------------------------------------------------------------------
 
 def tap(x, y):
