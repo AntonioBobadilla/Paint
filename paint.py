@@ -1,4 +1,3 @@
-python3 -m pip install freegames
 
 
 """Paint, for drawing shapes.
