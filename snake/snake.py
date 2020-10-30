@@ -28,7 +28,7 @@ def change(x, y):
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
-
+"""i know what do not how do it"""
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
@@ -50,15 +50,18 @@ def move():
         snake.pop(0)
 
     clear()
-
+# -------solo eliminar el #-------- todo lo de abajo esta comentado------------
+    #print each part of the snake
     for body in snake:
         colors = ['black', 'blue', 'purple', 'yellow', 'brown', 'lightgreen',
                  'darkolivegreen', 'teal', 'cyan', 'indigo', 'fuchsia', 'deeppink']
         rColor = randint(0,11)
         square(body.x, body.y, 9, colors[rColor])
 
+    #Print the first food
     square(food.x, food.y, 9, 'green')
     update()
+    #Set the game with inputs at 1/10 seconds
     ontimer(move, 100)
 
 setup(420, 420, -370, 0) #window size and coordinates
