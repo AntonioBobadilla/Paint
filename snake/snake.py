@@ -56,10 +56,10 @@ def move():
     update()
     ontimer(move, 100)
 
-setup(420, 420, 370, 0) #window size and coordinates
+setup(420, 420, -370, 0) #window size and coordinates
 hideturtle()
 tracer(False) #quit delay in the game drawing
-listen() #return keyboard interruptions
+listen() #return keyboard interruptions in loop
 #change directions
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
