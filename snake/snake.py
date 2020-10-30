@@ -11,6 +11,7 @@ Exercises
 
 from turtle import *
 from random import randrange
+from random import randint
 from freegames import square, vector
 
 #inicializa las coordenadas
@@ -42,15 +43,19 @@ def move():
 
     if head == food:
         print('Snake:', len(snake))
-        food.x = randrange(-15, 15) * 10
-        food.y = randrange(-15, 15) * 10
+        #create new food
+        food.x = randrange(-15, 15) * 10 # -150 <= x <= 150
+        food.y = randrange(-15, 15) * 10 # -150 <= y <= 150
     else:
         snake.pop(0)
 
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        colors = ['black', 'blue', 'purple', 'yellow', 'brown', 'lightgreen',
+                 'darkolivegreen', 'teal', 'cyan', 'indigo', 'fuchsia', 'deeppink']
+        rColor = randint(0,11)
+        square(body.x, body.y, 9, colors[rColor])
 
     square(food.x, food.y, 9, 'green')
     update()
