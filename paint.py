@@ -1,3 +1,4 @@
+python3 -m pip install freegames
 
 
 """Paint, for drawing shapes.
@@ -98,6 +99,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('purple'), 'P')
 
 #Change type de trazo
 ##call the funtion store  whith shape and the type.
