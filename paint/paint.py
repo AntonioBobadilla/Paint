@@ -12,7 +12,7 @@ Exercises
 
 """
 import math
-from turtle import * 
+from turtle import *
 from freegames import vector
 
 def line(start, end):
@@ -27,7 +27,7 @@ def square(start, end):
     up()
     goto(start.x, start.y) #begin in the first point
     down()
-    begin_fill() 
+    begin_fill()
 
     for count in range(4): #do four lines
         forward(end.x - start.x)
@@ -37,11 +37,13 @@ def square(start, end):
     end_fill()
 
 #---in comming ----------------------------------------------------------------------
-def circle(start, end):
-    "Draw circle from start to end."
-    pass  # TODO
-
-"""Usa circle, parese buena idea <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"""
+def circlet(start, end):
+    up()
+    goto(start.x+((end.x-start.x)/2), start.y+((end.y-start.y)/2)) # start to drawing the circle in the middle of x and y
+    down()
+    begin_fill() # start to fill with black color
+    circle(max( (abs(end.x-start.x)),  abs( (end.y-start.y) ) )/2) # get a radius of 15
+    end_fill() # end to fill the figure
 
 def rectangle(start, end):
 
@@ -59,7 +61,7 @@ def rectangle(start, end):
     end_fill()
 
 def triangle(start, end):
-    
+
     up()
     goto(start.x,end.y)
     begin_fill()
@@ -81,7 +83,7 @@ def tap(x, y):
     else:
         shape = state['shape']	#Read shape in state at shape
         end = vector(x, y)	#Define the second point
-        shape(start, end)	#Call the function x 
+        shape(start, end)	#Call the function x
         state['start'] = None	#Initialize the first point, not the type
 
 def store(key, value):
@@ -90,14 +92,14 @@ def store(key, value):
 
 state = {'start': None, 'shape': line} #initialize
 setup(420, 420, 370, 0) #Size of windows
-#	largo, alto, corrdenada x, y 
+#	largo, alto, corrdenada x, y
 
 
-onscreenclick(tap) 
+onscreenclick(tap)
 """i think that return interruptions of GI"""
-listen() 
+listen()
 """----------------------------------------------------------------------???"""
-onkey(undo, 'u') 
+onkey(undo, 'u')
 """  i think that only keep the states values"""
 
 #Change color del trazo
@@ -112,7 +114,7 @@ onkey(lambda: color('purple'), 'P')
 ##call the funtion store  whith shape and the type.
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circlet), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
@@ -136,7 +138,7 @@ Creo:
 	-but this could be on the end, or not?
 
 No tiene nada que ver:
--creo que tron usa distance para ver la colicion, estaria interesante ver como lo 
+-creo que tron usa distance para ver la colicion, estaria interesante ver como lo
 	implementa pero ahora no tengo ganas (22:41).
 -
 """
