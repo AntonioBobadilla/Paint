@@ -9,6 +9,8 @@ Exercises
 
 """
 
+# nuevo comentario bla bla
+
 from turtle import *
 from random import randrange
 from random import randint
